@@ -1,0 +1,96 @@
+:root {
+  --text-color: white;
+  --text-color-inactive: rgba(100%, 100%, 100%, .8);
+  --backgroundcolor: black;
+  --neutral: rgb(5%, 5%, 5%);
+  --text-size: 2rem;
+  --primarycolor: dodgerblue;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all .2s linear;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--backgroundcolor);
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: var(--text-size);
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px;
+  padding: 0px;
+}
+
+main {
+  max-width: 400px;
+  overflow: hidden;
+  width: 95vw;
+  border: 1px solid var(--text-color);
+  padding: 5px;
+  border-radius: 1rem;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  gap: 10px
+}
+
+.activescreen {
+  font-size: calc(var(--text-size)*1.1);
+}
+
+.inactivescreen {
+  color: var(--text-color-inactive);
+  font-size: calc(var(--text-size)*.8);
+  font-weight: normal;
+}
+
+.buttons-holder {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: space-between;
+  background: var(--neutral);
+  width: 100%;
+  gap: 5px
+}
+
+.button {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.action {
+  color: dodgerblue
+}
+
+.action:hover {
+  background: var(--primarycolor) !important;
+  color: var(--backgroundcolor);
+}
+
+.button:hover {
+  background: var(--text-color);
+  color: var(--backgroundcolor);
+}
+
+.large {
+  grid-row: span 2;
+  aspect-ratio: auto;
+  border-radius: 1rem;
+  background: var(--primarycolor);
+  color: var(--backgroundcolor)
+}
